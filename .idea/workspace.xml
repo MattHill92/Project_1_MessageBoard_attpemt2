@@ -11,7 +11,9 @@
   <component name="ChangeListManager">
     <list default="true" id="5b7660c4-e0f1-4edd-b355-90068f3a1c06" name="Changes" comment="Initial Commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NoteProject-1.0-SNAPSHOT-all.jar" beforeDir="false" afterPath="$PROJECT_DIR$/NoteProject-1.0-SNAPSHOT-all.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Util/ConnectionUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Util/ConnectionUtil.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,6 +89,10 @@
   </component>
   <component name="RunManager" selected="Application.MessageBoardAPI">
     <configuration name="MessageBoardAPI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <envs>
+        <env name="dbusername" value="CloudSA888c1aa5" />
+        <env name="dbpassword" value="P@ssword123" />
+      </envs>
       <option name="MAIN_CLASS_NAME" value="MessageBoardAPI" />
       <module name="NoteProject.main" />
       <method v="2">
@@ -185,6 +191,13 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Application.MessageBoardAPI" />
+      <item itemvalue="Gradle.ServiceTests" />
+      <item itemvalue="Gradle.ServiceTests.AddCommentTest1" />
+      <item itemvalue="Gradle.ServiceTests.AddPostTest1" />
+      <item itemvalue="Gradle.ServiceTests.UserMethodTest4" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.MessageBoardAPI" />

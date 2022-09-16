@@ -9,9 +9,11 @@ public class ConnectionUtil {
     public static Connection getConnection(){
         if (conn == null)
             try{
-                String url = "jdbc:sqlserver://messageboardtestdb.database.windows.net:1433;database=db1;user=CloudSA888c1aa5@messageboardtestdb;password=P@ssword123;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;";
+                String url = "jdbc:sqlserver://messageboardtestdb.database.windows.net:1433;database=db1;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;";
+                String username = System.getenv("dbusername");
+                String password = System.getenv("dbpassword");
 
-                conn = DriverManager.getConnection(url);
+                conn = DriverManager.getConnection(url,username,password);
             }catch(SQLException e){
                 e.printStackTrace();
             }
