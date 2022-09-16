@@ -7,7 +7,7 @@ plugins {
 }
 // Shadow task depends on Jar task, so these configs are reflected for Shadow as well
 tasks.jar {
-    manifest.attributes["Main-Class"] = "Main"
+    manifest.attributes["Main-Class"] = "MessageBoardAPI"
 }
 
 group 'org.example'

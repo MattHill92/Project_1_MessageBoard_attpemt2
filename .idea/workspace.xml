@@ -11,6 +11,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5b7660c4-e0f1-4edd-b355-90068f3a1c06" name="Changes" comment="Initial Commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,6 +73,7 @@
       <recent name="C:\Users\Matt\IdeaProjects\Project_1_MessageBoard" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Matt\IdeaProjects\Project_1_MessageBoard" />
       <recent name="C:\Users\Matt\IdeaProjects\NoteProject\src\main\resources" />
       <recent name="C:\Users\Matt\IdeaProjects\NoteProject" />
       <recent name="C:\Users\Matt\IdeaProjects\NoteProject\src\main\java" />
