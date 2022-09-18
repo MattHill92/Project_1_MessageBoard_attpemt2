@@ -27,7 +27,7 @@ public class MessageBoardAPI {
 
         app.before(ctx -> {
             ctx.header("Access-Control-Allow-Credentials", "true");
-            ctx.header("Access-Control-Allow-Origin", "http://127.0.0.1:5500");
+            //ctx.header("Access-Control-Allow-Origin", "http://127.0.0.1:5500");
         });
 
         //TEST SESSION ATTRIBUTE
