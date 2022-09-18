@@ -26,7 +26,7 @@ dependencies {
     implementation 'org.apache.logging.log4j:log4j-core:2.18.0'
 
     // https://mvnrepository.com/artifact/com.microsoft.sqlserver/mssql-jdbc
-    implementation group: 'com.microsoft.sqlserver', name: 'mssql-jdbc', version: '11.2.0.jre18'
+    implementation group: 'com.microsoft.sqlserver', name: 'mssql-jdbc', version: '11.2.1.jre17'
 
     // https://mvnrepository.com/artifact/io.javalin/javalin
     implementation group: 'io.javalin', name: 'javalin', version: '4.6.4'
