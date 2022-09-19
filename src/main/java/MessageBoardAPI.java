@@ -14,7 +14,12 @@ import java.io.UnsupportedEncodingException;
 import java.time.Instant;
 import java.util.Date;
 
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+
 public class MessageBoardAPI {
+
+    public static Logger logger = LogManager.getLogger(MessageBoardAPI.class);
 
     static MessageBoardDAO dao = new MessageBoardDAO();
     static MessageBoardService service = new MessageBoardService(dao);
@@ -24,6 +29,8 @@ public class MessageBoardAPI {
         Javalin app = Javalin.create(config -> {
             config.enableCorsForAllOrigins();
         }).start(7070);
+
+        logger.info("Application Started");
 
         app.before(ctx -> {
             ctx.header("Access-Control-Allow-Credentials", "true");
@@ -55,6 +62,7 @@ public class MessageBoardAPI {
         app.post("/login", ctx -> {
             ObjectMapper mapper = new ObjectMapper();
             User requestUser = mapper.readValue(ctx.body(), User.class);
+            logger.info("Login Attempt as " + requestUser.getUsername());
             if (service.attemptLogin(requestUser)){
                 String jwt =  generateUserJWT(service.getUserByUsername(requestUser.getUsername()));
                 /*
@@ -77,6 +85,7 @@ public class MessageBoardAPI {
         app.post("/register", ctx -> {
             ObjectMapper mapper = new ObjectMapper();
             User requestUser = mapper.readValue(ctx.body(), User.class);
+            logger.info("New User Registered: " + requestUser.getUsername());
             if(!service.registerUser(requestUser)) ctx.result("username taken");
             else {
                 requestUser = service.getUserByUsername(requestUser.getUsername());
@@ -105,6 +114,7 @@ public class MessageBoardAPI {
             // some code
             ObjectMapper mapper = new ObjectMapper();
             Post requestPost = mapper.readValue(ctx.body(), Post.class);
+            logger.info("New Post created with title: " + requestPost.getTitle());
             service.addPost(requestPost);
         });
 
@@ -113,12 +123,14 @@ public class MessageBoardAPI {
             // some code
             ObjectMapper mapper = new ObjectMapper();
             Post requestPost = mapper.readValue(ctx.body(), Post.class);
+            logger.info("Post updated with title: " + requestPost.getTitle());
             service.updatePost(Integer.parseInt(ctx.pathParam("id")), requestPost);
         });
 
 
         //delete Post/
         app.delete("/post/{id}", ctx -> {
+            logger.info("Post deleted request for id: " + ctx.pathParam("id"));
             service.deletePost(Integer.parseInt(ctx.pathParam("id")));
         });
 
@@ -130,11 +142,13 @@ public class MessageBoardAPI {
             // some code
             ObjectMapper mapper = new ObjectMapper();
             Comment requestComment = mapper.readValue(ctx.body(), Comment.class);
+            logger.info("comment made for post id: " + requestComment.getPostId());
             service.addComment(requestComment);
         });
 
         //delete Comment/
         app.delete("/comment/{id}", ctx -> {
+            logger.info("comment delete request for post id: " + ctx.pathParam("id"));
             service.deleteComment(Integer.parseInt(ctx.pathParam("id")));
         });
 
